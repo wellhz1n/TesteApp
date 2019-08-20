@@ -16,6 +16,24 @@ namespace TesteApp
         public MainPage()
         {
             InitializeComponent();
+            #region Elementos
+            Entry nome = NOME;
+            Entry senha = SENHA;
+            Button login = LOGAR;
+            Button novo = NOVO;
+            #endregion
+            #region Eventos
+            login.Clicked += Logar;
+            novo.Clicked += Novo;
+            #endregion
+        }
+        private void Logar(object sender,EventArgs args)
+        {
+
+        }
+        private void Novo(object sender, EventArgs args)
+        {
+
         }
     }
 }

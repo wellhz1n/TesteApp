@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TesteApp.MainPage">
+
+    <StackLayout BackgroundColor="MediumPurple" Padding="10" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Login" FontSize="30" FontAttributes="Bold" HorizontalOptions="Center" ></Label>
+            <Entry Placeholder="Nome" x:Name="NOME"></Entry>
+            <Entry Placeholder="Senha" Keyboard="password" x:Name="SENHA"></Entry>
+            <Button Text="Entrar" BackgroundColor="Indigo" TextColor="Gray" x:Name="LOGAR"></Button>
+        </StackLayout>
+            <Button BackgroundColor="#00000000" Text="Novo Por aqui?" BorderColor="Transparent" BorderWidth="0" x:Name="NOVO" ></Button>
+   
+    </StackLayout>
+
+</ContentPage>
