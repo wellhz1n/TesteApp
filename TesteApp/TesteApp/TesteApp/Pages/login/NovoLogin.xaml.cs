@@ -39,7 +39,9 @@ namespace TesteApp.Pages.login
         }
         private void Registrar(object sender, EventArgs args)
         {
-            new AcessoBanco().NovoLogin(nome.Text,senha.Text);
+           var gravar = new AcessoBanco().NovoLogin(nome.Text,senha.Text);
+            if (gravar)
+                Navigation.PopAsync();
         }
     }
 }

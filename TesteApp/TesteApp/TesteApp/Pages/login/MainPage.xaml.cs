@@ -1,11 +1,11 @@
-﻿using Android.Content;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TesteApp.DB;
+using TesteApp.Pages.Inicio;
 using TesteApp.Pages.login;
 using Xamarin.Forms;
 
@@ -46,7 +46,11 @@ namespace TesteApp
         {
             var resultado = new AcessoBanco().Login(nome.Text, senha.Text);
             if (resultado)
+            {
                 DependencyService.Get<IMenssage>().ShortAlert($@"Usuario {nome.Text} Logado");
+                Navigation.PushAsync(new Inicio());
+                Navigation.RemovePage(this);
+            }
             else
                 DependencyService.Get<IMenssage>().ShortAlert("erro");
         }
