@@ -1,4 +1,5 @@
 ﻿using System;
+using TesteApp.DB;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,11 +11,12 @@ namespace TesteApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
         {
+            new AcessoBanco();
             // Handle when your app starts
         }
 

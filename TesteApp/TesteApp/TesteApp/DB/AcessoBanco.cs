@@ -21,8 +21,15 @@ namespace TesteApp.DB
         public bool Login(string nome, string senha)
         {
             var lista = _conexao.Table<Login>().ToList();
-           var logou = lista.Where(l => l.Nome == nome && l.Senha == senha).FirstOrDefault();
-            return logou != null?true:false;
+            var logou = lista.Where(l => l.Nome == nome && l.Senha == senha).FirstOrDefault();
+            return logou != null ? true : false;
+        }
+        public void NovoLogin(string nome, string senha)
+        {
+            Login l = new Login();
+            l.Nome = nome;
+            l.Senha = senha;
+           var inserir = _conexao.Insert(l);
         }
     }
 }

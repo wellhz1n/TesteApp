@@ -10,7 +10,7 @@
         <StackLayout VerticalOptions="CenterAndExpand">
             <Label Text="Login" FontSize="30" FontAttributes="Bold" HorizontalOptions="Center" ></Label>
             <Entry Placeholder="Nome" x:Name="NOME"></Entry>
-            <Entry Placeholder="Senha" Keyboard="password" x:Name="SENHA"></Entry>
+            <Entry Placeholder="Senha" IsPassword="true" x:Name="SENHA"></Entry>
             <Button Text="Entrar" BackgroundColor="Indigo" TextColor="Gray" x:Name="LOGAR"></Button>
         </StackLayout>
             <Button BackgroundColor="#00000000" Text="Novo Por aqui?" BorderColor="Transparent" BorderWidth="0" x:Name="NOVO" ></Button>

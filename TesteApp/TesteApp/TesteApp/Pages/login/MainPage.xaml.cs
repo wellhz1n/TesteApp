@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Android.Content;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TesteApp.DB;
+using TesteApp.Pages.login;
 using Xamarin.Forms;
 
 namespace TesteApp
@@ -13,27 +16,43 @@ namespace TesteApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        Entry nome;
+        Entry senha;
+        Button login;
+        Button novo;
         public MainPage()
         {
             InitializeComponent();
             #region Elementos
-            Entry nome = NOME;
-            Entry senha = SENHA;
-            Button login = LOGAR;
-            Button novo = NOVO;
+            nome = NOME;
+            senha = SENHA;
+            login = LOGAR;
+            novo = NOVO;
             #endregion
             #region Eventos
+            login.IsEnabled = false;
             login.Clicked += Logar;
             novo.Clicked += Novo;
+            nome.TextChanged += Ativabtn;
+            senha.TextChanged += Ativabtn;
             #endregion
         }
-        private void Logar(object sender,EventArgs args)
+        private void Ativabtn(object sender, EventArgs args)
         {
-
+            if (nome.Text != null && senha.Text != null)
+                login.IsEnabled = true;
+        }
+        private void Logar(object sender, EventArgs args)
+        {
+            var resultado = new AcessoBanco().Login(nome.Text, senha.Text);
+            if (resultado)
+                DependencyService.Get<IMenssage>().ShortAlert($@"Usuario {nome.Text} Logado");
+            else
+                DependencyService.Get<IMenssage>().ShortAlert("erro");
         }
         private void Novo(object sender, EventArgs args)
         {
-
+            Navigation.PushAsync(new NovoLogin());
         }
     }
 }

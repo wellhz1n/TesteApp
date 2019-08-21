@@ -6,10 +6,13 @@
              mc:Ignorable="d"
              x:Class="TesteApp.Pages.login.NovoLogin">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="MediumPurple" Padding="10">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Label Text="Novo" FontSize="30" FontAttributes="Bold" HorizontalOptions="Center" ></Label>
+                <Entry Placeholder="Nome" x:Name="NOME"></Entry>
+                <Entry Placeholder="Senha" IsPassword="True" x:Name="SENHA"></Entry>
+                <Button Text="Cadastrar" BackgroundColor="Indigo" TextColor="Gray" x:Name="LOGAR"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
